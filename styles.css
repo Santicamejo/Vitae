@@ -1,0 +1,16 @@
+html{
+    text-decoration: none;
+    margin: none;
+    padding: none;
+    background-color: #06402B;
+}
+.cvBox{
+    display: flex;
+    justify-content: center;
+}
+
+.cvImg{
+    width: 33vw;
+    height: auto;
+    padding: 20px;
+}
