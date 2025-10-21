@@ -24,6 +24,19 @@
     padding: 21vh 0;
     text-align: center;
 }
+#main-contacto{
+    background: url(../img/hero.jpg) no-repeat center center fixed;
+    background-size: cover;
+    max-width: 50vw;    
+    text-align: center;
+}
+#hero-p{
+    background: url(../img/hero.jpg) no-repeat center center fixed;
+    background-size: cover;
+    max-width: 50vw;    
+    padding: 10vh 0;
+    text-align: center;
+}
 #titulo{
     font-size: 3vw;
     font-weight: bold;
@@ -59,7 +72,7 @@
     color: #fff;
     font-weight: 600;
     letter-spacing: .2px;
-    text-transform: uppercase;
+    text-transform: lowercase;
 }
 .proyecto--vermas{
     background: #f0f0f0;
@@ -67,12 +80,36 @@
 .proyecto--vermas .proyecto__label{
     text-transform: none;
 }
-#proyecto-uno{
-    background-image: url("assets/MiFoto.png");
+.proyecto{
+    position: relative;
+    display: block;
+    aspect-ratio: 16/9;      
+    overflow: hidden;
+    background-position: center;
+    background-size: cover;
+    transition: transform .18s ease, box-shadow .18s ease;
 }
-#proyecto-dos{
-    background-image: url("assets/invitacion.png");
+.proyecto:hover{
+    transform: translateY(-2px);
+    box-shadow: 0 .75rem 1.25rem rgba(0,0,0,.12);
 }
+.proyecto__mask{
+    position: absolute; inset: 0;
+    background: rgba(0,0,0,.50);
+    transition: background .18s ease;
+}
+.proyecto:hover .proyecto__mask{ background: rgba(0,0,0,.35); }
+.proyecto__label{
+    position: absolute; inset: 0;
+    display: grid; place-items: center;
+    color: #fff; 
+    font-weight: 700; 
+    text-transform: uppercase; 
+    letter-spacing: .4px;
+}
+.bg-agenda{ background-image: url("assets/agenda.png "); }
+.bg-invitaciones{ background-image: url("assets/invitacion.png"); }
+.bg-curriculum { background-image: url(assets/CV.png); }
 
 
 
@@ -94,7 +131,7 @@ footer article div strong{
 .u-underline::after{
     content:"";
     position:absolute;
-    left:0; bottom:-1px; 
+    left:0; bottom:-2px; 
     width: 100%; height: 1px;      
     background: orange;    
     transform: scaleX(0);
@@ -104,6 +141,12 @@ footer article div strong{
 .u-underline:hover::after, .u-underline:focus-visible::after {
     transform: scaleX(1);
 }
+.u-underline-active{
+    border-bottom: orange solid 2px;
+}   
+
+
+
 
 
 
