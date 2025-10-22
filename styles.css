@@ -45,11 +45,11 @@ main{
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    height: 64.5vh;
+    height: 67.5vh;
 }
 #hero {
     background: url(../img/hero.jpg) no-repeat center center fixed;
-    max-width: 70vw;
+    max-width: 50vw;
 }
 
 #main-contacto{
@@ -62,13 +62,13 @@ main{
 #hero-p{
     background: url(../img/hero.jpg) no-repeat center center fixed;
     background-size: cover;
-    max-width: 50vw;    
+    max-width: 40vw;    
     padding: 10vh 0;
     text-align: center;
 }
 
 #titulo{
-    font-size: 5.5vw;
+    font-size: 5.5vh;
     font-weight: bold;
 }
 /* 
