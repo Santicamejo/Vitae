@@ -8,28 +8,57 @@
 *{
     margin: 0;
     padding: 0;
-    text-decoration: none;
     box-sizing: border-box;
     font-family: var(--text);
-    color: black;
-    font-weight: 300;
 }
 
 
+#presentacion{
+    max-height: 60vh;
+}
 
+
+.u-underline{
+    position: relative;
+}
+.u-underline::after{
+    content:"";
+    position:absolute;
+    left:0; bottom:-2px; 
+    width: 100%; height: 1px;      
+    background: orange;    
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform .35s ease;
+}
+.u-underline:hover::after, .u-underline:focus-visible::after {
+    transform: scaleX(1);
+}
+.u-underline-active{
+    border-bottom: orange solid 2px;
+}  
+
+
+
+main{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height: 64.5vh;
+}
 #hero {
     background: url(../img/hero.jpg) no-repeat center center fixed;
-    background-size: cover;
-    max-width: 50vw;    
-    padding: 21vh 0;
-    text-align: center;
+    max-width: 70vw;
 }
+
 #main-contacto{
     background: url(../img/hero.jpg) no-repeat center center fixed;
     background-size: cover;
     max-width: 50vw;    
     text-align: center;
 }
+
 #hero-p{
     background: url(../img/hero.jpg) no-repeat center center fixed;
     background-size: cover;
@@ -37,13 +66,12 @@
     padding: 10vh 0;
     text-align: center;
 }
+
 #titulo{
-    font-size: 3vw;
+    font-size: 5.5vw;
     font-weight: bold;
 }
-
-
-
+/* 
 .proyecto{
     position: relative;
     display: block;
@@ -109,14 +137,62 @@
 }
 .bg-agenda{ background-image: url("assets/agenda.png "); }
 .bg-invitaciones{ background-image: url("assets/invitacion.png"); }
+.bg-curriculum { background-image: url(assets/CV.png); } */
+
+.proyecto:hover{
+    box-shadow: 0 .75rem 1.25rem rgba(0,0,0,.22);
+}
+.proyecto--vermas{
+    background: #f1f1f1;
+    position: relative;
+    display: block;
+    aspect-ratio: 16/8;      
+    overflow: hidden;
+    color: black;
+}
+.proyecto--vermas .proyecto__label{
+    text-transform: none;
+}
+.proyecto{
+    position: relative;
+    display: block;
+    aspect-ratio: 16/8;      
+    overflow: hidden;
+    background-position: center;
+    background-size: cover;
+    transition: transform .18s ease, box-shadow .18s ease;
+}
+.proyecto:hover{
+    transform: translateY(6px);
+    box-shadow: 0 .75rem 1.25rem rgba(0,0,0,.32);
+}
+.proyecto__mask{
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,.50);
+    transition: background .28s ease;
+}
+.proyecto:hover .proyecto__mask{ 
+    background: rgba(0,0,0,.35); 
+}
+
+.proyecto__label{
+    position: absolute; 
+    inset: 0;
+    display: grid; 
+    place-items: center;
+    text-transform: uppercase; 
+    letter-spacing: .4px;
+    font-weight: 500;
+    color: #fff;
+}
+
+.bg-agenda{ background-image: url("assets/agenda.png "); }
+.bg-invitaciones{ background-image: url("assets/invitacion.png"); }
 .bg-curriculum { background-image: url(assets/CV.png); }
 
 
-
-footer article div{
-    color: black;
-}
-footer article div strong{
+footer article div, footer article a{
     color: black;
 }
 
@@ -124,30 +200,7 @@ footer article div strong{
 
 
 
-
-.u-underline{
-    position: relative;
-}
-.u-underline::after{
-    content:"";
-    position:absolute;
-    left:0; bottom:-2px; 
-    width: 100%; height: 1px;      
-    background: orange;    
-    transform: scaleX(0);
-    transform-origin: left;
-    transition: transform .35s ease;
-}
-.u-underline:hover::after, .u-underline:focus-visible::after {
-    transform: scaleX(1);
-}
-.u-underline-active{
-    border-bottom: orange solid 2px;
-}   
-
-
-
-
+      
 
 
 
