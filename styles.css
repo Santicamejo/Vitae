@@ -12,10 +12,23 @@
     font-family: var(--text);
 }
 
-
-#presentacion{
-    max-height: 60vh;
+body{
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
+
+main {
+  flex: 1;
+}
+
+/* h1{
+    font-size: 70px
+} */
+ h1{
+    font-size: 50px;
+ }
+
 
 
 .u-underline{
@@ -45,27 +58,20 @@ main{
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    height: 67.5vh;
 }
 #hero {
     background: url(../img/hero.jpg) no-repeat center center fixed;
-    max-width: 50vw;
 }
 
 #main-contacto{
     background: url(../img/hero.jpg) no-repeat center center fixed;
     background-size: cover;
-    max-width: 50vw;    
-    text-align: center;
 }
 
 #hero-p{
     background: url(../img/hero.jpg) no-repeat center center fixed;
     background-size: cover;
-    max-width: 40vw;    
-    padding: 10vh 0;
-    text-align: center;
-}
+    text-align: center;}
 
 #titulo{
     font-size: 5.5vh;
@@ -200,7 +206,155 @@ footer article div, footer article a{
 
 
 
-      
 
 
 
+
+
+
+
+
+.hamb-btn{
+  width: 28px;
+  height: 22px;
+  position: relative;
+  border: none;
+  background: none;
+  padding: 0;
+}
+
+.hamb-btn span{
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: #000;
+  border-radius: 2px;
+  transition: .3s ease;
+}
+
+.hamb-btn span:nth-child(1){ top: 0; }
+.hamb-btn span:nth-child(2){ top: 9px; }
+.hamb-btn span:nth-child(3){ top: 18px; }
+
+.hamb-btn.active span:nth-child(1){
+  transform: rotate(45deg);
+  top: 9px;
+}
+.hamb-btn.active span:nth-child(2){
+  opacity: 0;
+}
+.hamb-btn.active span:nth-child(3){
+  transform: rotate(-45deg);
+  top: 9px;
+}
+
+
+#mainMenu{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    align-items: center;
+}
+
+#mainMenu #list-inline-item{
+    border-bottom: 5px orange solid;
+}
+
+#mainMenu.mobile-open {
+  display: flex;
+  position: relative;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,.15);
+}
+
+#mainMenu.mobile-open .list-inline-item {
+  display: block;
+  margin: 8px 0;
+  border: none !important;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.sw-root{
+  display:inline-flex;
+  gap:2px;
+  font-size:40px;
+  font-weight:800;
+  line-height:1;
+}
+
+.sw-slot{
+  display:inline-grid;
+  width: fit-content; 
+  height: 1.25em;
+  overflow:hidden;
+}
+
+.sw-char{
+  grid-area: 1 / 1;
+  display:grid;
+  place-items:center;
+  will-change: transform, opacity;
+}
+
+/* Estado base (visible) */
+.sw-char.is-current{
+  transform: translate(0,0);
+  opacity:1;
+}
+
+/* Animación de salida (la vieja se va) */
+.sw-char.out{
+  animation: swOut 220ms cubic-bezier(.9,0,1,1) forwards; /* lento->rápido (sale fuerte) */
+}
+
+/* Animación de entrada (la nueva viene de dirección) */
+.sw-char.in{
+  animation: swIn 420ms cubic-bezier(.1,.9,.2,1) forwards; /* arranca lento, acelera */
+}
+
+/* Usamos variables para dirección */
+@keyframes swIn{
+  from{
+    transform: translate(var(--from-x), var(--from-y));
+    opacity:0;
+  }
+  to{
+    transform: translate(0,0);
+    opacity:1;
+  }
+}
+
+@keyframes swOut{
+  from{
+    transform: translate(0,0);
+    opacity:1;
+  }
+  to{
+    transform: translate(var(--to-x), var(--to-y));
+    opacity:0;
+  }
+}
+
+
+
+
+
+
+@media(width >= 576px){
+.sw-root{
+  font-size:70px;
+}
+}
