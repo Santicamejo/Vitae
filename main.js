@@ -81,8 +81,6 @@ async function setWord(nextWord, {
     const fromChar = chAt(current, i);
     const toChar   = chAt(nextWord, i);
 
-    // Si querés que SIEMPRE anime aunque sea igual, dejalo así.
-    // Si NO querés animar cuando es igual, descomentá:
     if (fromChar === toChar) { await wait(stepDelay); continue; }
 
     // dirección aleatoria por letra (podés cambiarlo a fijo)
