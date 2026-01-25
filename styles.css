@@ -5,11 +5,16 @@
 :root {
     --text: "Poppins", system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans", Ubuntu, Cantarell, "Helvetica Neue", Arial, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;;
 }
+
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: var(--text);
+}
+a {
+  text-decoration: none;
+  color: inherit;
 }
 
 body{
@@ -18,132 +23,100 @@ body{
   min-height: 100vh;
 }
 
-main {
-  flex: 1;
-}
-
-/* h1{
-    font-size: 70px
-} */
- h1{
-    font-size: 50px;
- }
-
-
 
 .u-underline{
     position: relative;
 }
+
 .u-underline::after{
     content:"";
     position:absolute;
     left:0; bottom:-2px; 
     width: 100%; height: 1px;      
-    background: orange;    
+    background: rgb(0, 0, 0);    
     transform: scaleX(0);
     transform-origin: left;
     transition: transform .35s ease;
 }
+
 .u-underline:hover::after, .u-underline:focus-visible::after {
     transform: scaleX(1);
 }
+
 .u-underline-active{
-    border-bottom: orange solid 2px;
+    border-bottom: rgb(0, 0, 0) solid 2px;
 }  
 
+.hamb-btn{
+  width: 28px;
+  height: 22px;
+  position: relative;
+  border: none;
+  background: none;
+  padding: 0;
+}
+
+.hamb-btn span{
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: #000;
+  border-radius: 2px;
+  transition: .3s ease;
+}
+
+.hamb-btn span:nth-child(1){ top: 0; }
+.hamb-btn span:nth-child(2){ top: 9px; }
+.hamb-btn span:nth-child(3){ top: 18px; }
+
+.hamb-btn.active span:nth-child(1){
+  transform: rotate(45deg);
+  top: 9px;
+}
+
+.hamb-btn.active span:nth-child(2){
+  opacity: 0;
+}
+
+.hamb-btn.active span:nth-child(3){
+  transform: rotate(-45deg);
+  top: 9px;
+}
+
+#mainMenu{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    align-items: center;
+}
+
+#mainMenu #list-inline-item{
+    border-bottom: 5px orange solid;
+}
+
+#mainMenu.mobile-open {
+  display: flex;
+  position: relative;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,.15);
+}
+
+#mainMenu.mobile-open .list-inline-item {
+  display: block;
+  margin: 8px 0;
+  border: none !important;
+}
 
 
 main{
     display: flex;
+    flex: 1;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
 }
-#hero {
-    background: url(../img/hero.jpg) no-repeat center center fixed;
-}
 
-#main-contacto{
-    background: url(../img/hero.jpg) no-repeat center center fixed;
-    background-size: cover;
-}
-
-#hero-p{
-    background: url(../img/hero.jpg) no-repeat center center fixed;
-    background-size: cover;
-    text-align: center;}
-
-#titulo{
-    font-size: 5.5vh;
-    font-weight: bold;
-}
-/* 
-.proyecto{
-    position: relative;
-    display: block;
-    aspect-ratio: 16 / 9;
-    overflow: hidden;
-    background-position: center;
-    background-size: cover;
-}
-.proyecto:hover{
-    box-shadow: 0 .75rem 1.25rem rgba(0,0,0,.22);
-}
-.proyecto__mask{
-    position: absolute;
-    inset: 0;
-    background: rgba(0,0,0,.55);
-    transition: background .6s ease; 
-}
-.proyecto:hover .proyecto__mask{ 
-    background: rgba(0,0,0,.25);  
-}
-.proyecto__label{
-    position: absolute;
-    inset: 0;
-    display: grid;
-    place-items: center;
-    color: #fff;
-    font-weight: 600;
-    letter-spacing: .2px;
-    text-transform: lowercase;
-}
-.proyecto--vermas{
-    background: #f0f0f0;
-}
-.proyecto--vermas .proyecto__label{
-    text-transform: none;
-}
-.proyecto{
-    position: relative;
-    display: block;
-    aspect-ratio: 16/9;      
-    overflow: hidden;
-    background-position: center;
-    background-size: cover;
-    transition: transform .18s ease, box-shadow .18s ease;
-}
-.proyecto:hover{
-    transform: translateY(-2px);
-    box-shadow: 0 .75rem 1.25rem rgba(0,0,0,.12);
-}
-.proyecto__mask{
-    position: absolute; inset: 0;
-    background: rgba(0,0,0,.50);
-    transition: background .18s ease;
-}
-.proyecto:hover .proyecto__mask{ background: rgba(0,0,0,.35); }
-.proyecto__label{
-    position: absolute; inset: 0;
-    display: grid; place-items: center;
-    color: #fff; 
-    font-weight: 700; 
-    text-transform: uppercase; 
-    letter-spacing: .4px;
-}
-.bg-agenda{ background-image: url("assets/agenda.png "); }
-.bg-invitaciones{ background-image: url("assets/invitacion.png"); }
-.bg-curriculum { background-image: url(assets/CV.png); } */
 
 .proyecto:hover{
     box-shadow: 0 .75rem 1.25rem rgba(0,0,0,.22);
@@ -203,96 +176,12 @@ footer article div, footer article a{
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-.hamb-btn{
-  width: 28px;
-  height: 22px;
-  position: relative;
-  border: none;
-  background: none;
-  padding: 0;
-}
-
-.hamb-btn span{
-  position: absolute;
-  left: 0;
-  width: 100%;
-  height: 3px;
-  background: #000;
-  border-radius: 2px;
-  transition: .3s ease;
-}
-
-.hamb-btn span:nth-child(1){ top: 0; }
-.hamb-btn span:nth-child(2){ top: 9px; }
-.hamb-btn span:nth-child(3){ top: 18px; }
-
-.hamb-btn.active span:nth-child(1){
-  transform: rotate(45deg);
-  top: 9px;
-}
-.hamb-btn.active span:nth-child(2){
-  opacity: 0;
-}
-.hamb-btn.active span:nth-child(3){
-  transform: rotate(-45deg);
-  top: 9px;
-}
-
-
-#mainMenu{
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-    align-items: center;
-}
-
-#mainMenu #list-inline-item{
-    border-bottom: 5px orange solid;
-}
-
-#mainMenu.mobile-open {
-  display: flex;
-  position: relative;
-  border-radius: 8px;
-  box-shadow: 0 4px 10px rgba(0,0,0,.15);
-}
-
-#mainMenu.mobile-open .list-inline-item {
-  display: block;
-  margin: 8px 0;
-  border: none !important;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 .sw-root{
   display:inline-flex;
-  gap:2px;
-  font-size:40px;
-  font-weight:800;
-  line-height:1;
+  gap: 2px;
+  font-size: 45px;
+  font-weight: 800;
+  line-height: 1;
 }
 
 .sw-slot{
@@ -317,15 +206,15 @@ footer article div, footer article a{
 
 /* Animación de salida (la vieja se va) */
 .sw-char.out{
-  animation: swOut 220ms cubic-bezier(.9,0,1,1) forwards; /* lento->rápido (sale fuerte) */
+  animation: swOut 220ms cubic-bezier(.9,0,1,1) forwards;
 }
 
 /* Animación de entrada (la nueva viene de dirección) */
 .sw-char.in{
-  animation: swIn 420ms cubic-bezier(.1,.9,.2,1) forwards; /* arranca lento, acelera */
+  animation: swIn 420ms cubic-bezier(.1,.9,.2,1) forwards;
 }
 
-/* Usamos variables para dirección */
+/* variables para dirección */
 @keyframes swIn{
   from{
     transform: translate(var(--from-x), var(--from-y));
@@ -349,12 +238,52 @@ footer article div, footer article a{
 }
 
 
+#proyectos{
+    overflow-y: auto;
+    max-height: 60vh;
+}
+#proyectos::after {
+  content: "";
+  position: sticky;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 30px;
+  pointer-events: none;
 
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0),
+    rgba(255, 255, 255, 0.9)
+  );
+}
+#ProyectoEnDetalle{
+  width: 22vw;
+  padding: 0;
+  background-color: rgb(236, 236, 236);
+}
 
+figure img{
+  aspect-ratio: 16/8;
+}
+
+figcaption{
+  margin: 1rem 0;
+}
+
+figcaption :nth-child(1){
+  font-weight: 500;
+}
 
 
 @media(width >= 576px){
-.sw-root{
-  font-size:70px;
+  .sw-root{
+    font-size: 60px;
+  }
 }
-}
+
+
+
+
+
+
