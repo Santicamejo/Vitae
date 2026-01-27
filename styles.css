@@ -166,7 +166,7 @@ main{
     color: #fff;
 }
 
-.bg-agenda{ background-image: url("assets/agenda.png "); }
+.bg-agenda{ background-image: url("assets/agenda.png"); }
 .bg-invitaciones{ background-image: url("assets/invitacion.png"); }
 .bg-curriculum { background-image: url(assets/CV.png); }
 
@@ -258,8 +258,6 @@ footer article div, footer article a{
   );
 }
 #ProyectoEnDetalle{
-  width: 22vw;
-  padding: 0;
   background-color: rgb(236, 236, 236);
 }
 
@@ -268,7 +266,7 @@ figure img{
 }
 
 figcaption{
-  margin: 1rem 0;
+    padding: .5rem 0;
 }
 
 figcaption :nth-child(1){
